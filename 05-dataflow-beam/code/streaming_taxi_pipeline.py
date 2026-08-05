@@ -20,7 +20,10 @@ TABLE = f"{PROJECT}.cymbal_warehouse.vendor_stats_streaming"
 
 class ParseMessage(beam.DoFn):
     def process(self, element):
-        data = json.loads(element.decode("utf-8"))
+        payload = element.data if hasattr(element, "data") else element
+        if isinstance(payload, (bytes, bytearray)):
+            payload = payload.decode("utf-8")
+        data = json.loads(payload)
         yield {
             "vendor_id": data.get("vendor_id"),
             "total_amount": float(data.get("total_amount", 0.0)),
