@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 """Read BigQuery into Spark, aggregate, write back."""
+import os
+
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import avg, col, count, sum
 
-PROJECT = "gcp-data-engineering-course"
+PROJECT = os.environ.get("PROJECT_ID", "gcp-data-engineering-course")
 
 spark = SparkSession.builder.appName("BigQueryPipeline").getOrCreate()
 

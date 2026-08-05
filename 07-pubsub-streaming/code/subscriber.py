@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 """Pull subscriber with ack/nack."""
 import json
+import os
 
 from google.cloud import pubsub_v1
 
-PROJECT_ID = "gcp-data-engineering-course"
+PROJECT_ID = os.environ.get("PROJECT_ID", "gcp-data-engineering-course")
 SUBSCRIPTION_ID = "cymbal-orders-sub"
 
 subscriber = pubsub_v1.SubscriberClient()

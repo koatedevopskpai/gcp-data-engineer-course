@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 """Publish simulated orders with ordering keys."""
 import json
+import os
 import random
 import time
 
 from google.cloud import pubsub_v1
 
-PROJECT_ID = "gcp-data-engineering-course"
+PROJECT_ID = os.environ.get("PROJECT_ID", "gcp-data-engineering-course")
 TOPIC_ID = "cymbal-orders"
 
 publisher = pubsub_v1.PublisherClient(

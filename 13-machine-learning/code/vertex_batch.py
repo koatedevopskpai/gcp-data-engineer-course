@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 """Vertex AI batch prediction example."""
+import os
+
 from google.cloud import aiplatform
 
-PROJECT = "gcp-data-engineering-course"
+PROJECT = os.environ.get("PROJECT_ID", "gcp-data-engineering-course")
 LOCATION = "us-central1"
 MODEL_ID = "MODEL_ID"  # from `gcloud ai models list`
 

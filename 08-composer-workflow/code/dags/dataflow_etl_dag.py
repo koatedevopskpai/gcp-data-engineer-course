@@ -1,10 +1,11 @@
+import os
 from datetime import datetime, timedelta
 
 from airflow import DAG
 from airflow.providers.google.cloud.operators.bigquery import BigQueryInsertJobOperator
 from airflow.providers.google.cloud.operators.dataflow import DataflowStartFlexTemplateOperator
 
-PROJECT = "gcp-data-engineering-course"
+PROJECT = os.environ.get("PROJECT_ID", "gcp-data-engineering-course")
 
 default_args = {
     "owner": "data-team",

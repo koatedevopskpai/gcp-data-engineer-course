@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 """Process messages in the dead-letter queue."""
 import json
+import os
 
 from google.cloud import pubsub_v1
 
-PROJECT_ID = "gcp-data-engineering-course"
+PROJECT_ID = os.environ.get("PROJECT_ID", "gcp-data-engineering-course")
 SUBSCRIPTION_ID = "cymbal-orders-dlq-sub"
 
 subscriber = pubsub_v1.SubscriberClient()

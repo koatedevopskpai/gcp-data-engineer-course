@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 """PySpark job: aggregate taxi trips by vendor and write to BigQuery."""
+import os
+
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import avg, col, count, max, min, sum
 
-PROJECT = "gcp-data-engineering-course"
+PROJECT = os.environ.get("PROJECT_ID", "gcp-data-engineering-course")
 
 spark = SparkSession.builder.appName("TaxiAnalysis").getOrCreate()
 
