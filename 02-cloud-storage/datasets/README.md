@@ -26,6 +26,10 @@ matching `03-bigquery-fundamentals/code/schema.json` exactly:
 > fare_amount, trip_distance` because `05-dataflow-beam/code/taxi_etl_pipeline.py`
 > parses rows positionally (`row[0..4]`) and `06-dataproc-spark/code/taxi_analysis.py`
 > reads them by header name.
+>
+> `03-bigquery-fundamentals/code/schema.json` is ordered to match this header
+> exactly, so `bq load ... schema.json` maps columns correctly (BigQuery matches
+> explicit schemas positionally when loading CSV).
 
 ### Upload to your raw bucket (Modules 3, 5, 6 depend on this)
 

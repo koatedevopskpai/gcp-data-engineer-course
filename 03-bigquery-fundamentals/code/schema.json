@@ -16,18 +16,8 @@
   },
   {
     "mode": "NULLABLE",
-    "name": "dropoff_datetime",
-    "type": "TIMESTAMP"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "pickup_location",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "dropoff_location",
-    "type": "STRING"
+    "name": "fare_amount",
+    "type": "FLOAT64"
   },
   {
     "mode": "NULLABLE",
@@ -36,8 +26,13 @@
   },
   {
     "mode": "NULLABLE",
-    "name": "fare_amount",
-    "type": "FLOAT64"
+    "name": "dropoff_datetime",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "passenger_count",
+    "type": "INT64"
   },
   {
     "mode": "NULLABLE",
@@ -56,7 +51,12 @@
   },
   {
     "mode": "NULLABLE",
-    "name": "passenger_count",
-    "type": "INT64"
+    "name": "pickup_location",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "dropoff_location",
+    "type": "STRING"
   }
 ]
