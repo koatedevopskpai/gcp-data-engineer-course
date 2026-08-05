@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Secrets — never commit service account keys or credentials
+*.pem
+*.p12
+*.jks
+sa-key*.json
+service-account*.json
+credentials.json
+.env
+.env.*
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# Editors / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Google Cloud CLI
+.credentials/
+config.json
+
+# Course TXT docs — kept local only, never deployed via git
+/COURSE-WALKALONG.txt
+/gcp-data-professional-exam-prep_Udemy_Course.txt
+/EXECUTION-LOG.txt
