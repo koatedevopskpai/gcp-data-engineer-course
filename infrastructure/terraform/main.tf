@@ -1,9 +1,10 @@
 # Shared course infrastructure (buckets, BQ, Pub/Sub, SA + IAM).
 
 resource "google_storage_bucket" "raw" {
-  name          = "${var.bucket_prefix}-raw-${var.project_id}"
-  location      = var.region
-  force_destroy = true
+  name                        = "${var.bucket_prefix}-raw-${var.project_id}"
+  location                    = var.region
+  force_destroy               = true
+  uniform_bucket_level_access = true
   versioning {
     enabled = true
   }
@@ -23,9 +24,10 @@ resource "google_storage_bucket" "raw" {
 }
 
 resource "google_storage_bucket" "processed" {
-  name          = "${var.bucket_prefix}-processed-${var.project_id}"
-  location      = var.region
-  force_destroy = true
+  name                        = "${var.bucket_prefix}-processed-${var.project_id}"
+  location                    = var.region
+  force_destroy               = true
+  uniform_bucket_level_access = true
 }
 
 resource "google_bigquery_dataset" "warehouse" {
