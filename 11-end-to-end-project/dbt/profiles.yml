@@ -1,13 +1,17 @@
-# dbt profiles for the Cymbal project. Fill in real values.
+# dbt profiles for the Cymbal project.
+#
+# Uses Application Default Credentials (ADC) on the machine where dbt runs:
+#   gcloud auth application-default login
+# In Composer, use a custom image that ships dbt-bigquery and a service-account
+# key mounted at a path, then point `keyfile` at it.
 gcp_data_engineering_course:
   outputs:
     prod:
       type: bigquery
-      method: service-account
+      method: oauth
       project: gcp-data-engineering-course
-      dataset: marts
+      dataset: cymbal_warehouse
       threads: 4
-      keyfile: /path/to/sa-key.json
       location: us-central1
       priority: interactive
   target: prod

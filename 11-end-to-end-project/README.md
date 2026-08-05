@@ -30,8 +30,10 @@ python code\streaming_pipeline.py `
 ## dbt transforms
 ```bash
 cd dbt
-dbt deps && dbt seed && dbt run
+dbt deps && dbt run
 ```
+> `stg_events` materializes as a view in `<project>.cymbal_warehouse_staging`,
+> `fct_daily_sales` as a table in `<project>.cymbal_warehouse_marts`.
 
 ## Deliverables checklist
 - [ ] Clickstream simulator publishing to Pub/Sub

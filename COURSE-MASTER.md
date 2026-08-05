@@ -370,7 +370,7 @@ Cloud Storage: staging/temp + archival of raw events
 **Deliverables (`11-end-to-end-project/`)**
 - `code/simulator.py` — publishes simulated clickstream to Pub/Sub
 - `code/streaming_pipeline.py` — Beam pipeline: parse → enrich → Bronze + windowed Gold writes
-- `dbt/` — dbt project (`profiles.yml`, `stg_events.sql`, `fct_daily_sales.sql`, `schema.yml`)
+- `dbt/` — dbt project (`profiles.yml`, `models/staging/stg_events.sql`, `models/marts/fct_daily_sales.sql`, `models/schema.yml`)
 - `code/dags/end_to_end_dag.py` — Composer DAG (validation → dbt → backfill → alert)
 - `dashboard/` — Looker Studio layout & metrics guide
 - `architecture/architecture.md` + diagram (typo corrected)
