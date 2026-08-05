@@ -1,11 +1,19 @@
 {
   "displayName": "Airflow DAG Failure Alert",
-  "conditionMatcher": {
-    "filters": [
-      "resource.type=\"cloud_composer_environment\"",
-      "metric.type=\"logging.googleapis.com/user/airflow.dag.failed\""
-    ]
-  },
-  "notificationChannels": [],
-  "combiner": "OR"
+  "combiner": "OR",
+  "conditions": [
+    {
+      "displayName": "Composer workflow run failed",
+      "conditionThreshold": {
+        "filter": "metric.type=\"composer.googleapis.com/workflow/run_count\" AND metric.labels.status=\"failed\"",
+        "comparison": "COMPARISON_GT",
+        "thresholdValue": 0,
+        "duration": "60s",
+        "trigger": {
+          "count": 1
+        }
+      }
+    }
+  ],
+  "notificationChannels": []
 }

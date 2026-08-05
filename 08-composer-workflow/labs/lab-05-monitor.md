@@ -17,24 +17,41 @@ gcloud logging read "resource.type=cloud_composer_environment" --limit=50
 
 ## 3. Create an alerting policy (JSON, correct approach)
 
-Create `code/alerting-policy.json`:
+Create `code/alerting-policy.json` (valid `gcloud monitoring policies create` format):
 ```json
 {
   "displayName": "Airflow DAG Failure Alert",
-  "conditionMatcher": {
-    "filters": [
-      "resource.type=\"cloud_composer_environment\"",
-      "metric.type=\"logging.googleapis.com/user/airflow.dag.failed\""
-    ]
-  },
-  "notificationChannels": ["projects/gcp-data-engineering-course/notificationChannels/CHANNEL_ID"],
-  "combiner": "OR"
+  "combiner": "OR",
+  "conditions": [
+    {
+      "displayName": "Composer workflow run failed",
+      "conditionThreshold": {
+        "filter": "metric.type=\"composer.googleapis.com/workflow/run_count\" AND metric.labels.status=\"failed\"",
+        "comparison": "COMPARISON_GT",
+        "thresholdValue": 0,
+        "duration": "60s",
+        "trigger": {
+          "count": 1
+        }
+      }
+    }
+  ],
+  "notificationChannels": []
 }
 ```
+> Why this metric: `composer.googleapis.com/workflow/run_count` with
+> `status=failed` is a real Composer metric, so the policy actually fires.
+> There is no `logging.googleapis.com/user/airflow.dag.failed` metric unless you
+> build a log-based metric from Composer logs first.
 
 Upload and enable:
 ```powershell
 gcloud beta monitoring policies create --policy-from-file=code\alerting-policy.json
+```
+
+Clean up after the lab:
+```powershell
+gcloud beta monitoring policies delete <POLICY_ID>
 ```
 
 ## Alternative (console — most reliable for students)
