@@ -11,6 +11,7 @@ from apache_beam.options.pipeline_options import PipelineOptions
 PROJECT = os.environ.get("PROJECT_ID", "gcp-data-engineering-course")
 INPUT = f"gs://cymbal-raw-{PROJECT}/taxi/taxi_trips.csv"
 TABLE = f"{PROJECT}.cymbal_warehouse.taxi_trips_beam"
+TEMP_GCS = f"gs://cymbal-processed-{PROJECT}/dataflow/temp"
 SCHEMA = (
     "trip_id:STRING,vendor_id:STRING,pickup_datetime:TIMESTAMP,"
     "fare_amount:FLOAT64,trip_distance:FLOAT64"
@@ -38,7 +39,8 @@ class CleanData(beam.DoFn):
 
 
 def run() -> None:
-    with beam.Pipeline() as p:
+    options = PipelineOptions()
+    with beam.Pipeline(options=options) as p:
         (
             p
             | "ReadCSV" >> beam.io.ReadFromText(INPUT, skip_header_lines=1)
@@ -47,6 +49,7 @@ def run() -> None:
             | "WriteToBigQuery" >> WriteToBigQuery(
                 table=TABLE,
                 schema=SCHEMA,
+                custom_gcs_temp_location=TEMP_GCS,
                 write_disposition=beam.io.BigQueryDisposition.WRITE_TRUNCATE,
                 create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED,
             )

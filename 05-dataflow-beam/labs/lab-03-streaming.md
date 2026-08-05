@@ -57,6 +57,7 @@ with beam.Pipeline(options=options) as p:
 ```powershell
 python code\streaming_taxi_pipeline.py `
   --runner=DataflowRunner --project=gcp-data-engineering-course --region=us-central1 `
+  --service_account_email=data-engineer-sa@gcp-data-engineering-course.iam.gserviceaccount.com `
   --streaming `
   --temp_location=gs://cymbal-processed-gcp-data-engineering-course/dataflow/temp `
   --max_num_workers=2

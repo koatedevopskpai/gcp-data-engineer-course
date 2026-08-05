@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 """Side inputs: enrich orders with a static lookup table (see Lab 05.4)."""
 import apache_beam as beam
+from apache_beam.options.pipeline_options import PipelineOptions
 
 
 def run() -> None:
-    with beam.Pipeline() as p:
+    options = PipelineOptions()
+    with beam.Pipeline(options=options) as p:
         lookup = (
             p
             | "CreateLookup" >> beam.Create(

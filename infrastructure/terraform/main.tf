@@ -1,5 +1,9 @@
 # Shared course infrastructure (buckets, BQ, Pub/Sub, SA + IAM).
 
+data "google_project" "project" {
+  project_id = var.project_id
+}
+
 resource "google_storage_bucket" "raw" {
   name                        = "${var.bucket_prefix}-raw-${var.project_id}"
   location                    = var.region
@@ -75,4 +79,16 @@ resource "google_project_iam_member" "pubsub_editor" {
   project = var.project_id
   role    = "roles/pubsub.editor"
   member  = "serviceAccount:${google_service_account.data_engineer.email}"
+}
+
+resource "google_project_iam_member" "dataflow_worker" {
+  project = var.project_id
+  role    = "roles/dataflow.worker"
+  member  = "serviceAccount:${google_service_account.data_engineer.email}"
+}
+
+resource "google_service_account_iam_member" "data_engineer_impersonator" {
+  service_account_id = google_service_account.data_engineer.name
+  role               = "roles/iam.serviceAccountUser"
+  member             = "serviceAccount:${data.google_project.project.number}-compute@developer.gserviceaccount.com"
 }

@@ -31,7 +31,8 @@ class ParseMessage(beam.DoFn):
 
 
 def run() -> None:
-    with beam.Pipeline() as p:
+    options = PipelineOptions()
+    with beam.Pipeline(options=options) as p:
         parsed = (
             p
             | "ReadFromPubSub" >> beam.io.ReadFromPubSub(

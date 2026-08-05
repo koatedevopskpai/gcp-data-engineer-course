@@ -20,6 +20,7 @@ python code\taxi_etl_pipeline.py `
   --runner=DataflowRunner `
   --project=gcp-data-engineering-course `
   --region=us-central1 `
+  --service_account_email=data-engineer-sa@gcp-data-engineering-course.iam.gserviceaccount.com `
   --temp_location=gs://cymbal-processed-gcp-data-engineering-course/dataflow/temp `
   --staging_location=gs://cymbal-processed-gcp-data-engineering-course/dataflow/staging `
   --max_num_workers=2 `
@@ -37,4 +38,5 @@ clean  | "WriteToBigQuery" >> WriteToBigQuery(...)
 ## Exam notes
 - `ParDo` = element-wise transform (a `DoFn`); `Map`/`FlatMap` are sugar.
 - `CombinePerKey`, `GroupByKey` and **side inputs** are the core PTransform toolkit.
-- Dataflow service account needs `roles/dataflow.worker` + the data permissions.
+- Run the job as `data-engineer-sa` (created by Terraform): it holds `roles/storage.objectAdmin`, `roles/bigquery.dataEditor`, `roles/bigquery.jobUser` and `roles/dataflow.worker`.
+- **Beam 2.75 gotcha:** build `PipelineOptions()` explicitly and pass to `beam.Pipeline(options=...)`, otherwise `--runner`/`--project` from the command line are ignored and it silently runs on the local runner.
