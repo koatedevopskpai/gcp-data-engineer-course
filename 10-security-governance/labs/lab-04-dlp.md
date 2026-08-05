@@ -13,7 +13,7 @@ project_id = "gcp-data-engineering-course"
 client = dlp_v2.DlpServiceClient()
 parent = f"projects/{project_id}"
 
-text = "Customer: John Doe, Email: john.doe@example.com, SSN: 123-45-6789"
+text = "Customer: John Doe, Email: jdoe@example.com, SSN: 078-05-1120"
 
 inspect_config = {
     "info_types": [
@@ -27,8 +27,7 @@ inspect_config = {
 deidentify_config = {
     "info_type_transformations": {
         "transformations": [
-            {"primitive_transformation": {"replace_with_info_type_config": {}}},
-            {"primitive_transformation": {"crypto_deterministic_config": {"crypto_key": {"kms_wrapped": {"wrapped_key": None}}}}},
+            {"primitive_transformation": {"replace_with_info_type_config": {}}}
         ]
     }
 }
@@ -44,6 +43,10 @@ response = client.deidentify_content(
 print("Original:", text)
 print("Redacted:", response.item.value)
 ```
+> Note: `123-45-6789` (and `111-11-1111`) are deliberately excluded by DLP's
+> SSN detector as dummy values — use a realistic number like `078-05-1120` so
+> the redaction is visible. Emails whose local part looks like a name
+> (`john.doe@example.com`) produce `[PERSON_NAME][EMAIL_ADDRESS][PERSON_NAME]`.
 
 ## 2. DLP job over a BigQuery table (console)
 1. Console → **Security → DLP → Create job**.

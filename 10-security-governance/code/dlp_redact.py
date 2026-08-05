@@ -5,7 +5,7 @@ import os
 from google.cloud import dlp_v2
 
 PROJECT_ID = os.environ.get("PROJECT_ID", "gcp-data-engineering-course")
-TEXT = "Customer: John Doe, Email: john.doe@example.com, SSN: 123-45-6789"
+TEXT = "Customer: John Doe, Email: jdoe@example.com, SSN: 078-05-1120"
 
 
 def main() -> None:
