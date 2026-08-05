@@ -1,0 +1,11 @@
+{
+  "displayName": "Airflow DAG Failure Alert",
+  "conditionMatcher": {
+    "filters": [
+      "resource.type=\"cloud_composer_environment\"",
+      "metric.type=\"logging.googleapis.com/user/airflow.dag.failed\""
+    ]
+  },
+  "notificationChannels": [],
+  "combiner": "OR"
+}

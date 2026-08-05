@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: cymbal_warehouse
+    schema: cymbal_warehouse
+    tables:
+      - name: clickstream_raw
+
+models:
+  - name: stg_events
+    description: "Cleaned, typed, deduped clickstream events"
+    columns:
+      - name: event_id
+        description: "Unique event identifier"
+        tests:
+          - not_null
+          - unique
+      - name: user_id
+        tests:
+          - not_null
+
+  - name: fct_daily_sales
+    description: "Daily product sales metrics"
+    columns:
+      - name: date
+        tests:
+          - not_null

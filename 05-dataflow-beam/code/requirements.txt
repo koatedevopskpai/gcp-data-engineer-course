@@ -1,0 +1,2 @@
+# Worker dependencies for Dataflow (also used by flex-template image build)
+apache-beam[gcp]>=2.54.0

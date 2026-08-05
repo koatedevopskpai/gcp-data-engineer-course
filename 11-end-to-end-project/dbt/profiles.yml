@@ -1,0 +1,13 @@
+# dbt profiles for the Cymbal project. Fill in real values.
+gcp_data_engineering_course:
+  outputs:
+    prod:
+      type: bigquery
+      method: service-account
+      project: gcp-data-engineering-course
+      dataset: marts
+      threads: 4
+      keyfile: /path/to/sa-key.json
+      location: us-central1
+      priority: interactive
+  target: prod

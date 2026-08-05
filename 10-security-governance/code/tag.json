@@ -1,0 +1,10 @@
+{
+  "fields": {
+    "pii_type": {
+      "stringValue": "Payment Information"
+    },
+    "classification": {
+      "stringValue": "Confidential"
+    }
+  }
+}

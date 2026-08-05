@@ -1,0 +1,18 @@
+{
+  "title": "Data Engineer Course Role",
+  "description": "Custom role for course users: query BigQuery and manage Storage objects, without destructive permissions.",
+  "stage": "GA",
+  "includedPermissions": [
+    "bigquery.jobs.create",
+    "bigquery.jobs.get",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list",
+    "bigquery.datasets.get",
+    "bigquery.datasets.getIamPolicy",
+    "storage.buckets.get",
+    "storage.objects.get",
+    "storage.objects.list",
+    "storage.objects.create"
+  ]
+}

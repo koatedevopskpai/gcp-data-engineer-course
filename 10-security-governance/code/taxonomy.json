@@ -1,0 +1,21 @@
+{
+  "taxonomies": [
+    {
+      "displayName": "Sensitive Data",
+      "description": "Column-level sensitivity taxonomy for Cymbal Retail",
+      "policyTags": [
+        {
+          "displayName": "PII",
+          "childPolicyTags": [
+            {
+              "displayName": "Payment"
+            }
+          ]
+        },
+        {
+          "displayName": "Restricted"
+        }
+      ]
+    }
+  ]
+}
