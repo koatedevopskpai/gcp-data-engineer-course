@@ -5,7 +5,7 @@ Shared materials referenced across the course.
 | File | Purpose |
 |---|---|
 | `recording-guide.md` | Module-by-module video recording script outline |
-| `course-README.md` | Top-level course landing/README (root of the package) |
+| `../README.md` | Top-level course landing/README (root of the package) |
 
 Also see:
 - `12-exam-preparation/cheat-sheets.md` — the master decision tables.

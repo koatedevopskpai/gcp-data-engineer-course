@@ -38,12 +38,19 @@ COURSE-MASTER.md           corrected master document
 
 ## Quick start
 ```bash
-git clone <repo> && cd gcp-data-engineer-course
+git clone https://github.com/koate-kpai/gcp-data-engineer-course.git
+cd gcp-data-engineer-course
 gcloud config set project YOUR_PROJECT_ID
+export PROJECT_ID=YOUR_PROJECT_ID          # PowerShell: $env:PROJECT_ID = "YOUR_PROJECT_ID"
 python -m venv .venv && source .venv/bin/activate   # PowerShell: .venv\Scripts\Activate.ps1
 pip install -r 00-getting-started/requirements.txt
-cd infrastructure/terraform && terraform apply -var="project_id=YOUR_PROJECT_ID"
+cd infrastructure/terraform
+terraform apply -var="project_id=YOUR_PROJECT_ID"
 ```
+
+> All Python code and DAGs read the project from the `PROJECT_ID` environment
+> variable (falling back to `gcp-data-engineering-course`), so every script
+> works on any project without edits.
 
 ## Cost policy
 Always `terraform destroy` / delete Composer, Dataproc, Dataflow, and Vertex
