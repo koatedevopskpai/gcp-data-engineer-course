@@ -1,0 +1,41 @@
+trip_id,vendor_id,pickup_datetime,fare_amount,trip_distance,dropoff_datetime,passenger_count,tip_amount,total_amount,payment_type,pickup_location,dropoff_location
+T2024-0001,VTS,2024-01-05 09:54:00,49.25,18.7,2024-01-05 10:03:00,2,1.00,53.50,CREDIT,Manhattan - Lower East Side,Queens - Astoria
+T2024-0002,VTS,2024-01-05 08:32:00,9.50,2.8,2024-01-05 08:41:00,5,1.00,13.75,CSH,Manhattan - Upper West Side,Manhattan - Chelsea
+T2024-0003,VTS,2024-01-05 15:39:00,20.75,7.3,2024-01-05 16:24:00,4,0.00,24.00,DEBIT,Bronx - Fordham,Queens - Flushing
+T2024-0004,VTS,2024-01-05 11:40:00,10.00,3.0,2024-01-05 12:09:00,3,5.00,18.25,DEBIT,Bronx - Fordham,Manhattan - Financial District
+T2024-0005,VTS,2024-01-05 15:50:00,11.50,3.6,2024-01-05 16:32:00,5,5.00,19.75,DEBIT,JFK Airport,Manhattan - Chelsea
+T2024-0006,VTS,2024-01-05 09:11:00,44.25,16.7,2024-01-05 09:21:00,2,2.00,49.50,CREDIT,Manhattan - Upper West Side,Newark Airport
+T2024-0007,VCM,2024-01-05 15:44:00,54.75,20.9,2024-01-05 16:32:00,3,0.00,58.00,CSH,Bronx - Fordham,Brooklyn - Park Slope
+T2024-0008,VCM,2024-01-05 10:55:00,48.50,18.4,2024-01-05 11:37:00,4,0.00,51.75,DEBIT,Queens - LGA,Manhattan - Harlem
+T2024-0009,VCM,2024-01-05 08:57:00,54.00,20.6,2024-01-05 09:19:00,3,3.50,60.75,CREDIT,Queens - LGA,Manhattan - Harlem
+T2024-0010,VTS,2024-01-05 11:37:00,34.25,12.7,2024-01-05 12:26:00,3,8.00,45.50,CSH,Queens - LGA,Newark Airport
+T2024-0011,VCM,2024-01-05 17:58:00,58.75,22.5,2024-01-05 18:33:00,2,5.00,67.00,CSH,Brooklyn - Williamsburg,Brooklyn - Park Slope
+T2024-0012,VCM,2024-01-05 08:48:00,13.00,4.2,2024-01-05 09:03:00,5,0.00,16.25,CREDIT,Manhattan - Upper West Side,Queens - Astoria
+T2024-0013,VTS,2024-01-05 15:59:00,19.25,6.7,2024-01-05 16:40:00,5,0.00,22.50,DEBIT,JFK Airport,Brooklyn - Park Slope
+T2024-0014,VCM,2024-01-05 13:00:00,13.50,4.4,2024-01-05 13:35:00,5,0.00,16.75,CSH,Manhattan - Lower East Side,Newark Airport
+T2024-0015,VTS,2024-01-05 16:39:00,16.00,5.4,2024-01-05 17:25:00,5,3.50,22.75,CREDIT,JFK Airport,Brooklyn - Coney Island
+T2024-0016,VTS,2024-01-05 08:19:00,60.75,23.3,2024-01-05 08:34:00,1,2.00,66.00,CSH,Manhattan - Lower East Side,Brooklyn - Park Slope
+T2024-0017,VTS,2024-01-05 16:17:00,63.75,24.5,2024-01-05 16:29:00,4,0.00,67.00,CSH,Bronx - Fordham,Queens - Astoria
+T2024-0018,VCM,2024-01-05 11:36:00,50.00,19.0,2024-01-05 12:18:00,4,1.00,54.25,DEBIT,Brooklyn - Williamsburg,Brooklyn - Coney Island
+T2024-0019,VTS,2024-01-05 10:03:00,17.50,6.0,2024-01-05 10:26:00,5,3.50,24.25,CSH,Queens - LGA,Manhattan - Financial District
+T2024-0020,VTS,2024-01-05 09:12:00,42.50,16.0,2024-01-05 10:05:00,1,1.00,46.75,DEBIT,Manhattan - Lower East Side,Manhattan - Chelsea
+T2024-0021,VCM,2024-01-05 12:45:00,33.50,12.4,2024-01-05 13:35:00,2,0.00,36.75,NO,Manhattan - Upper West Side,Manhattan - Chelsea
+T2024-0022,VCM,2024-01-05 09:36:00,44.00,16.6,2024-01-05 09:50:00,4,3.50,50.75,NO,Manhattan - Midtown,Brooklyn - Park Slope
+T2024-0023,VTS,2024-01-05 09:02:00,48.25,18.3,2024-01-05 09:35:00,2,0.00,51.50,CSH,Brooklyn - Williamsburg,Queens - Flushing
+T2024-0024,VTS,2024-01-05 15:12:00,20.75,7.3,2024-01-05 15:31:00,4,1.00,25.00,CREDIT,Manhattan - Midtown,Manhattan - Financial District
+T2024-0025,VCM,2024-01-05 09:35:00,14.00,4.6,2024-01-05 09:58:00,2,8.00,25.25,NO,Manhattan - Midtown,Queens - Flushing
+T2024-0026,VCM,2024-01-05 14:28:00,64.00,24.6,2024-01-05 14:36:00,3,2.00,69.25,NO,Brooklyn - Williamsburg,Queens - Flushing
+T2024-0027,VTS,2024-01-05 11:14:00,17.00,5.8,2024-01-05 11:40:00,3,0.00,20.25,CREDIT,Manhattan - Midtown,Brooklyn - Coney Island
+T2024-0028,VTS,2024-01-05 16:34:00,13.50,4.4,2024-01-05 17:15:00,1,0.00,16.75,CREDIT,Queens - LGA,Queens - Astoria
+T2024-0029,VTS,2024-01-05 10:02:00,18.75,6.5,2024-01-05 10:46:00,4,0.00,22.00,DEBIT,Bronx - Fordham,Manhattan - Chelsea
+T2024-0030,VCM,2024-01-05 13:21:00,20.00,7.0,2024-01-05 13:44:00,4,0.00,23.25,DEBIT,Manhattan - Lower East Side,Manhattan - Financial District
+T2024-0031,VTS,2024-01-05 15:49:00,65.00,25.0,2024-01-05 16:36:00,5,0.00,68.25,CSH,Bronx - Fordham,Queens - Flushing
+T2024-0032,VCM,2024-01-05 13:57:00,57.50,22.0,2024-01-05 14:09:00,2,3.50,64.25,NO,Bronx - Fordham,Manhattan - Financial District
+T2024-0033,VTS,2024-01-05 17:27:00,60.75,23.3,2024-01-05 17:54:00,3,0.00,64.00,CREDIT,Manhattan - Lower East Side,Queens - Flushing
+T2024-0034,VTS,2024-01-05 12:38:00,40.75,15.3,2024-01-05 13:04:00,3,3.50,47.50,NO,Bronx - Fordham,Manhattan - Financial District
+T2024-0035,VTS,2024-01-05 09:34:00,29.75,10.9,2024-01-05 10:22:00,1,2.00,35.00,DEBIT,Brooklyn - Downtown,Newark Airport
+T2024-0036,VTS,2024-01-05 10:45:00,30.75,11.3,2024-01-05 11:40:00,1,5.00,39.00,CREDIT,Brooklyn - Downtown,Manhattan - Financial District
+T2024-0037,VTS,2024-01-05 14:18:00,37.50,14.0,2024-01-05 15:03:00,1,5.00,45.75,DEBIT,JFK Airport,Manhattan - Financial District
+T2024-0038,VCM,2024-01-05 14:06:00,45.50,17.2,2024-01-05 14:27:00,5,0.00,48.75,NO,Brooklyn - Downtown,Manhattan - Chelsea
+T2024-0039,VTS,2024-01-05 10:46:00,57.75,22.1,2024-01-05 11:05:00,3,0.00,61.00,NO,Queens - LGA,Newark Airport
+T2024-0040,VCM,2024-01-05 10:43:00,10.25,3.1,2024-01-05 11:35:00,2,0.00,13.50,CSH,Brooklyn - Williamsburg,Manhattan - Harlem

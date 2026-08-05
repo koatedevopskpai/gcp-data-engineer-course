@@ -176,7 +176,7 @@ CLUSTER BY vendor_id, payment_type;
 ```
 ```bash
 bq load --source_format=CSV --skip_leading_rows=1 \
-  cymbal_warehouse.taxi_trips gs://cymbal-raw-$(gcloud config get-value project)/taxi_trips.csv schema.json
+  cymbal_warehouse.taxi_trips gs://cymbal-raw-$(gcloud config get-value project)/taxi/taxi_trips.csv schema.json
 ```
 ```sql
 -- BigLake external table over Parquet
