@@ -8,8 +8,13 @@ resource "google_storage_bucket" "raw" {
     enabled = true
   }
   lifecycle_rule {
-    action { type = "SetStorageClass"; storage_class = "NEARLINE" }
-    condition { age = 30 }
+    action {
+      type          = "SetStorageClass"
+      storage_class = "NEARLINE"
+    }
+    condition {
+      age = 30
+    }
   }
   lifecycle_rule {
     action { type = "Delete" }
@@ -24,8 +29,8 @@ resource "google_storage_bucket" "processed" {
 }
 
 resource "google_bigquery_dataset" "warehouse" {
-  dataset_id                 = "cymbal_warehouse"
-  location                   = var.region
+  dataset_id                  = "cymbal_warehouse"
+  location                    = var.region
   default_table_expiration_ms = 1000 * 60 * 60 * 24 * 365
 }
 
@@ -34,9 +39,9 @@ resource "google_pubsub_topic" "clickstream" {
 }
 
 resource "google_pubsub_subscription" "clickstream_sub" {
-  name                 = "clickstream-sub"
-  topic                = google_pubsub_topic.clickstream.name
-  ack_deadline_seconds = 60
+  name                         = "clickstream-sub"
+  topic                        = google_pubsub_topic.clickstream.name
+  ack_deadline_seconds         = 60
   enable_exactly_once_delivery = true
   enable_message_ordering      = true
 }
