@@ -38,6 +38,7 @@ resource "google_bigquery_dataset" "warehouse" {
   dataset_id                  = "cymbal_warehouse"
   location                    = var.region
   default_table_expiration_ms = 1000 * 60 * 60 * 24 * 365
+  delete_contents_on_destroy  = true
 }
 
 resource "google_pubsub_topic" "clickstream" {
