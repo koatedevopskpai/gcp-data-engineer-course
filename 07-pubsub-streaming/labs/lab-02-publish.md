@@ -13,7 +13,8 @@ project_id = "gcp-data-engineering-course"
 topic_id = "cymbal-orders"
 
 publisher = pubsub_v1.PublisherClient(
-    batch_settings=pubsub_v1.types.BatchSettings(max_messages=100, max_bytes=1024 * 1024)
+    batch_settings=pubsub_v1.types.BatchSettings(max_messages=100, max_bytes=1024 * 1024),
+    publisher_options=pubsub_v1.types.PublisherOptions(enable_message_ordering=True),
 )
 topic_path = publisher.topic_path(project_id, topic_id)
 
@@ -35,7 +36,7 @@ for i in range(100):
     print(f"[{i+1}] published {order['order_id']}")
     time.sleep(0.2)
 
-publisher.close()
+publisher.stop()
 print("done")
 ```
 
@@ -45,7 +46,9 @@ python code\publisher.py
 ```
 
 ## Exam notes
-- **Ordering keys** require the topic's subscription to have
-  `--enable-message-ordering`.
+- **Ordering keys** require the subscription to have
+  `--enable-message-ordering` **and** the publisher client to be created with
+  `PublisherOptions(enable_message_ordering=True)` (the client raises
+  `ValueError` otherwise).
 - Publish **batching** improves throughput; control with `batch_settings`.
 - Use **RetrySettings** / flow control to avoid overwhelm.

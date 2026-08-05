@@ -11,7 +11,8 @@ PROJECT_ID = os.environ.get("PROJECT_ID", "gcp-data-engineering-course")
 TOPIC_ID = "cymbal-orders"
 
 publisher = pubsub_v1.PublisherClient(
-    batch_settings=pubsub_v1.types.BatchSettings(max_messages=100, max_bytes=1024 * 1024)
+    batch_settings=pubsub_v1.types.BatchSettings(max_messages=100, max_bytes=1024 * 1024),
+    publisher_options=pubsub_v1.types.PublisherOptions(enable_message_ordering=True),
 )
 topic_path = publisher.topic_path(PROJECT_ID, TOPIC_ID)
 
@@ -35,7 +36,7 @@ def main() -> None:
         future = publisher.publish(topic_path, data, ordering_key=order["customer_id"])
         print(f"[{i+1}] published {order['order_id']}")
         time.sleep(0.2)
-    publisher.close()
+    publisher.stop()
     print("done")
 
 
