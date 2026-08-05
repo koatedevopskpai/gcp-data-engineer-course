@@ -56,6 +56,7 @@
 | 12 | Streaming lacked watermarks, late data, session windows, exactly-once semantics | Added to Module 5 theory and Lab 3 | `05-dataflow-beam/` |
 | 13 | `gcloud data-catalog taxonomies create` / `policy-tags create` don't exist (verified against SDK 573) | Taxonomies + policy tags are created by **importing** a serialized taxonomy file (`taxonomies import`); sample `taxonomy.json` added | `10-security-governance/labs/lab-02-data-catalog-policy-tags.md`, `code/taxonomy.json` |
 | 14 | `gcloud dataform repositories create` — no `gcloud dataform` group exists (verified against SDK 573) | Create Dataform repos via console or the Dataform REST API (curl) | `04-bigquery-advanced/labs/lab-06-dataform.md` |
+| 15 | Data Catalog tag templates/tags are **deprecated** — `gcloud data-catalog tag-templates create` / `tags create` return `INVALID_ARGUMENT ... not allowed to perform write operations due to Data Catalog deprecation` | Module 10 Lab 2 focuses on **policy tags** (fine-grained column security, still fully supported) and points metadata/classification tagging to its Dataplex successor (`gcloud dataplex aspect-types`); `set-iam-policy` uses a positional policy file, not `--policy-file` | `10-security-governance/labs/lab-02-data-catalog-policy-tags.md` |
 
 ---
 

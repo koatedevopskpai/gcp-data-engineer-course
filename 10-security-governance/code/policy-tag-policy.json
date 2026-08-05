@@ -1,0 +1,10 @@
+{
+  "bindings": [
+    {
+      "role": "roles/datacatalog.categoryFineGrainedReader",
+      "members": [
+        "serviceAccount:data-engineer-sa@gcp-data-engineering-course.iam.gserviceaccount.com"
+      ]
+    }
+  ]
+}
