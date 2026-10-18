@@ -38,7 +38,7 @@ COURSE-MASTER.md           corrected master document
 
 ## Quick start
 ```bash
-git clone https://github.com/koate-kpai/gcp-data-engineer-course.git
+git clone https://github.com/koatedevopskpai/gcp-data-engineer-course.git
 cd gcp-data-engineer-course
 gcloud config set project YOUR_PROJECT_ID
 export PROJECT_ID=YOUR_PROJECT_ID          # PowerShell: $env:PROJECT_ID = "YOUR_PROJECT_ID"
